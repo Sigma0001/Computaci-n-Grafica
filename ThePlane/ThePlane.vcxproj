@@ -164,6 +164,7 @@
     <ClCompile Include="src\ShaderFuncs.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Shaders\gouraudPlane.v" />
     <None Include="Shaders\passThru.f" />
     <None Include="Shaders\passThru.v" />
   </ItemGroup>

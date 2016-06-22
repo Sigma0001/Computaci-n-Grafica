@@ -18,6 +18,7 @@ public:
 	void reshape(int w, int h);
 	void update();
 	void keyboard(int key, int scanCode, int action, int mods);
+	void cursor_position(double Xpos, double Ypos);
 	void avanza();
 	void Izq();
 
@@ -31,9 +32,9 @@ private:
 	float fTime;
 	Plane oPlane;
 
-	glm::mat4 camera;
+	glm::mat4 camera, mTra;
 	
-	glm::vec3 eye, target, up;
+	glm::vec3 eye, target, up, light;
 	
 };
 

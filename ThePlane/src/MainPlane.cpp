@@ -36,10 +36,14 @@ void keyboard(GLFWwindow *window, int key, int scanCode, int action, int mods)
 	app.keyboard(key, scanCode, action, mods);
 }
 
+void cursor_pos_callback(GLFWwindow * window, double Xpos, double Ypos)
+{
+	app.cursor_position(Xpos, Ypos);
+}
+
 
 int main(int argc, char *argv[])
 {
-	Application app;
 
 	GLFWwindow* window;
 
@@ -75,6 +79,8 @@ int main(int argc, char *argv[])
 	glViewport(0, 0, (GLsizei)640, (GLsizei)480);
 
 	glfwSetKeyCallback(window, keyboard); 
+
+	glfwSetCursorPosCallback(window, cursor_pos_callback);
 
 	while (!glfwWindowShouldClose(window))
 	{

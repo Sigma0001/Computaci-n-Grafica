@@ -16,6 +16,8 @@ public:
 
 	glm::vec3 aRotations;
 	glm::mat4 mTransform;
+	glm::vec3 myLightPosition; /**/
+	glm::vec3 vEye; /**/
 
 
 	GLint uTransform[2];

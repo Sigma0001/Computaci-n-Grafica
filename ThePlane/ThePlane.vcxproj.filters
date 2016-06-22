@@ -49,5 +49,8 @@
     <None Include="Shaders\passThru.f">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="Shaders\gouraudPlane.v">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

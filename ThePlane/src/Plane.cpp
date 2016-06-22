@@ -7,8 +7,10 @@ Plane::Plane() : Object3D(),
 					normals(NULL),
 					plane(NULL),
 					textureCoords(NULL),
-					mTransform(glm::mat4(1.0)),
+					//mTransform(glm::mat4(1.0)),
 					aRotations(0.0f, 0.0f, 0.0f),
+					//myLightPosition(0.0f, 90.0f, 80.0f),
+					//vEye(0.0f,90.0f,80.0f),
 					side(0)
 {
 }
