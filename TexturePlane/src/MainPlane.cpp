@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 		return -1;
 
 	
-	window = glfwCreateWindow(640, 480, "TexturePlaneHeight", NULL, NULL);
+	window = glfwCreateWindow(640, 480, "TexturePlane", NULL, NULL);
 	if (!window)
 	{
 		glfwTerminate();

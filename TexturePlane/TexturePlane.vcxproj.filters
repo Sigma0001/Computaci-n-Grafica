@@ -22,6 +22,12 @@
     <None Include="Shaders\passThru.v">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="Shaders\Bump.f">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Shaders\Bump.v">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Application.h">

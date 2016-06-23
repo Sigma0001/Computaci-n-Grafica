@@ -39,18 +39,19 @@ void Application::Texture0()
 	int img_width, img_height;
 	int channels;
 	
-	//COMENTAR PARA MAPA DE ALTURA
-	unsigned char* img = SOIL_load_image("Lenna.png", &img_width, &img_height, &channels, 0);
-	//DESCOMENTAR PARA MAPA DE ALTURA
+	//Doble Textura
+	unsigned char* img = SOIL_load_image("c.png", &img_width, &img_height, &channels, 0);
+	//MAPA DE ALTURA
 	//unsigned char* img = SOIL_load_image("dra.png", &img_width, &img_height, &channels, 0);
+	
 	
 	
 
 	glGenTextures(1, &oPlane.texture_id);
 	glBindTexture(GL_TEXTURE_2D, oPlane.texture_id);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, img_width, img_height, 0, GL_RGB, GL_UNSIGNED_BYTE, img);
-	glTexStorage2D(GL_TEXTURE_2D, 0, GL_RGB, img_width, img_height);
-	glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, img_width, img_height, GL_RGB, GL_UNSIGNED_BYTE, img);
+	//glTexStorage2D(GL_TEXTURE_2D, 0, GL_RGB, img_width, img_height);
+	//glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, img_width, img_height, GL_RGB, GL_UNSIGNED_BYTE, img);
 
 	SOIL_free_image_data(img);
 
@@ -75,16 +76,17 @@ void Application::Texture1()
 	int channels;
 
 	//COMENTAR PARA MAPA DE ALTURA
-	unsigned char* img = SOIL_load_image("rb.png", &img_width, &img_height, &channels, 0);
+	//unsigned char* img = SOIL_load_image("Lenna2.png", &img_width, &img_height, &channels, 0);
 	//DESCOMENTAR PARA MAPA DE ALTURA
 	//unsigned char* img = SOIL_load_image("dratex.png", &img_width, &img_height, &channels, 0);  
-	
+	//Bump
+	unsigned char* img = SOIL_load_image("c.png", &img_width, &img_height, &channels, 0);
 
 	glGenTextures(1, &oPlane.texture_id2);
 	glBindTexture(GL_TEXTURE_2D, oPlane.texture_id2);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, img_width, img_height, 0, GL_RGB, GL_UNSIGNED_BYTE, img);
-	glTexStorage2D(GL_TEXTURE_2D, 0, GL_RGB, img_width, img_height);
-	glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, img_width, img_height, GL_RGB, GL_UNSIGNED_BYTE, img);
+	//glTexStorage2D(GL_TEXTURE_2D, 0, GL_RGB, img_width, img_height);
+	//glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, img_width, img_height, GL_RGB, GL_UNSIGNED_BYTE, img);
 
 	SOIL_free_image_data(img);
 
@@ -106,9 +108,12 @@ void Application::setup()
 	Texture1();
 	oPlane.createPlane(20);
 	
-	std::string sVertex = loadTextFile("Shaders/passThru.v");
-	std::string sFragment = loadTextFile("Shaders/passThru.f");
+	//std::string sVertex = loadTextFile("Shaders/passThru.v");
+	//std::string sFragment = loadTextFile("Shaders/passThru.f");
  
+
+	std::string sVertex = loadTextFile("Shaders/Bump.v");
+	std::string sFragment = loadTextFile("Shaders/Bump.f");
 
 	InitializeProgram(oPlane.shader[0], sVertex, sFragment);
 	InitializeProgram(oPlane.shader[1], sVertex, sFragment);
@@ -165,7 +170,7 @@ void Application::display()
 	glUseProgram(oPlane.shader[0]);
 	
 	glUseProgram(oPlane.shader[1]);
-	glm::mat4 transform = camera  *oPlane.rotation;
+	glm::mat4 transform = camera *oPlane.rotation;
 	transform = glm::perspective(45.0f, 640.0f/480.0f, 0.1f,200.0f)*transform*mTra;
 	glUniformMatrix4fv(oPlane.uTransform[0],1,GL_FALSE, glm::value_ptr(transform));
 

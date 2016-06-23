@@ -20,6 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\ThePlane - copia\ThePlane.vcxproj" />
+    <None Include="Shaders\Bump.f" />
+    <None Include="Shaders\Bump.v" />
     <None Include="Shaders\passThru.f" />
     <None Include="Shaders\passThru.v" />
   </ItemGroup>
