@@ -9,14 +9,14 @@ uniform sampler2D Texture;
 uniform sampler2D NormMap;
 vec4 lPos; 
 
-const float chainy = 40.0;
+const float chainy = 50.0;
 
 const vec3 A = vec3( 0.2, 0.2, 0.2 );
 const vec3 D = vec3( 1.0, 1.0, 1.0 );
 const vec3 S = vec3( 1.0, 1.0, 1.0 );
 
-const vec3 Am = vec3( 0.7, 0.9, 0.0 );
-const vec3 Dm = vec3( 0.3, 1.0, 0.0 );
+const vec3 Am = vec3( 1.0, 1.0, 1.0 );
+const vec3 Dm = vec3( 0.5, 0.5, 0.5 );
 const vec3 Sm = vec3( 0.7, 0.7, 0.7 );
 
 vec3 Ambient()
