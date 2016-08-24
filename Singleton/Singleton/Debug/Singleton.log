@@ -1,0 +1,4 @@
+﻿  Main.cpp
+c:\users\rocagu_7\documents\sae\programas\sistemasdejuego\singleton\singleton\main.cpp(18): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Singleton.vcxproj -> C:\Users\rocagu_7\Documents\Sae\Programas\SistemasDeJuego\Singleton\Debug\Singleton.exe
+  Singleton.vcxproj -> C:\Users\rocagu_7\Documents\Sae\Programas\SistemasDeJuego\Singleton\Debug\Singleton.pdb (Partial PDB)
